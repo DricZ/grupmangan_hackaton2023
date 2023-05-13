@@ -1,5 +1,6 @@
 /*Underline*/
 body{
+    /* height: 100%; */
     /* background-color: #FFF4F4; */
 }
 li.underliners::after {
@@ -28,5 +29,17 @@ li.underliners:hover::after {
 
 .carousel-inner .card{
   min-height: 300px;
+}
+
+.sidebar{
+    transition: .5s ease-in-out;
+}
+
+.sidebar .active{
+    background-color: #EC3333;
+}
+
+.sidebar:hover{
+    background-color: #F07167;
 }
 

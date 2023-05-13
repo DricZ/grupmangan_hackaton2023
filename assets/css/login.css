@@ -11,6 +11,12 @@ body{
 
 .input-group-append, .input-group-prepend {
     display: flex;
+    gap: 5px;
+    margin-left: 9%;
+}
+
+.input-group-text{
+    margin-bottom: 20px ;
 }
 
 #fpass{
@@ -91,7 +97,10 @@ input{
     border: none;
     outline: none;
     border-radius: 5px;
+    margin: auto;
 }
+
+
 
 button{
     width: 60%;
@@ -151,7 +160,7 @@ button:hover{
     margin-bottom: 20px;
 }
 
-#btnback{
+.back{
     margin-left: 0.6cm;
     width: 3.5cm;
     height: 0.8cm;
@@ -169,7 +178,7 @@ button:hover{
     cursor:pointer;
 }
 
-#btnback:hover{
+.back:hover{
     background: #e47171;
 }
 
