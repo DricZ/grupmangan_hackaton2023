@@ -1,12 +1,11 @@
 <?php
-    // require "head.php";
     session_start();
 ?>
 <!doctype html>
 <html lang="en">
 
 <?php
-  include "head.php";
+  include "head-lp.php";
 ?>
 
 <body>
@@ -33,7 +32,7 @@
           </li>
           <li class="nav-item mx-2">
             <!-- <a class="nav-link" href="#"><button class="btn btn-outline-light">Masuk</button></a> -->
-            <a class=" btn btn-outline-dark btn-light" href="#"><i class="fa-solid fa-user-plus"></i> Masuk</a>
+            <a class=" btn btn-outline-dark btn-light" href="./login.php"><i class="fa-solid fa-user-plus"></i> Masuk</a>
           </li>
           <!-- <li class="nav-item mx-2">
             <a class=" btn btn-outline-dark btn-light" href="#"><i class="fa-solid fa-user-plus"></i> Daftar</a>
@@ -305,6 +304,14 @@
       </div>
     </div>
   </div>
+
+  <?php 
+  if(isset($_GET['stats'])){
+    if($_GET['stats'] == 0){
+      echo "<alert>Berhasil Log-Out</alert>";
+    }
+  } 
+  ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"

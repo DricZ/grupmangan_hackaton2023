@@ -1,0 +1,37 @@
+body {
+  font-family: "inter";
+  background-color: rgba(255, 244, 244, 1);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* box-sizing: border-box; */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: auto;
+  border: 1px solid black;
+}
+
+.content {
+  background: white;
+  width: 800px;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 20px;
+  position: relative;
+}
+
+.content > .test {
+  position: absolute;
+  background: red;
+  top: 20px;
+  left: 300px;
+  border-radius: 20px;
+}

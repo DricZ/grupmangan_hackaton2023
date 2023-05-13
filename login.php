@@ -1,6 +1,6 @@
 <?php
-    // require "head.php";
-    session_start();
+// require "head.php";
+session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
 
     <!-- <link href="css/sb-admin-2.min.css" rel="stylesheet"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css" rel="stylesheet">
-    
+
     <link rel="icon" type="image/x-icon" href="./assets/img/logo-ct.png" style="margin: -10px;">
     <link rel="stylesheet" href="./assets/css/login.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
@@ -29,42 +29,41 @@
 
     <script>
         //keyboard anti inspection
-        document.addEventListener("keydown", function(e) {
-        // if (e.key === "F12") { //no inspect
-        //     e.preventDefault();
-        //     window.location.replace("./css/");
-        // }
-        if (e.ctrlKey && e.key === "p") { //no print
-            e.preventDefault();
-        }
+        document.addEventListener("keydown", function (e) {
+            // if (e.key === "F12") { //no inspect
+            //     e.preventDefault();
+            //     window.location.replace("./css/");
+            // }
+            if (e.ctrlKey && e.key === "p") { //no print
+                e.preventDefault();
+            }
         });
 
-        document.addEventListener('contextmenu', function(event) { //no right click
-        event.preventDefault();
+        document.addEventListener('contextmenu', function (event) { //no right click
+            event.preventDefault();
         });
     </script>
-    
+
 </head>
 
 <body>
     <div class="container">
-        
+
         <?php
-            if (isset($_GET['stats'])) {
-                if ($_GET['stats'] == 0) {
-                    echo "<div class='alert alert-danger' role='alert'>Username atau Password Salah!</div>";
-                } else if ($_GET['stats'] == 1) {
-                    echo "<div class='alert alert-warning' role='alert'>Session Timeout</div>";
-                }
+        if (isset($_GET['stats'])) {
+            if ($_GET['stats'] == 0) {
+                echo "<div class='alert alert-danger' role='alert'>Username atau Password Salah!</div>";
+            } else if ($_GET['stats'] == 1) {
+                echo "<div class='alert alert-warning' role='alert'>Session Timeout</div>";
             }
+        }
         ?>
-        
+
         <div class="main">
-            <div class= "atas" style="display: flex; gap:10px">
-                <button id="btnback"><i class="fa-solid fa-arrow-right-from-bracket"></i>Kembali</button>
-                <!-- <span class="back">
+            <div class="atas" style="display: flex; gap:10px">
+                <span class="back">
                     <p style="display: flex; gap: 8px"><i class="fa-solid fa-arrow-right-from-bracket"></i>Kembali</p>
-                </span> -->
+                </span>
                 <h3 style="margin-top:5%">HI, selamat datang di MAJAR!</h3>
             </div>
             <div class="login">
@@ -85,12 +84,14 @@
                         
                         <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
                     </div>
-                    <button type="submit">Konfirmasi</button>
-                </form>
+                    <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
             </div>
+            <button type="submit">Konfirmasi</button>
+            </form>
         </div>
     </div>
-    
+    </div>
+
 </body>
 
 
@@ -119,10 +120,10 @@
     }
 </script>
 <?php
-    if(isset($_GET['alert'])){
-        $alert = $_GET['alert'];
-        echo "<script>alert('$alert');</script>";
-    }
+if (isset($_GET['alert'])) {
+    $alert = $_GET['alert'];
+    echo "<script>alert('$alert');</script>";
+}
 ?>
 
 </html>
