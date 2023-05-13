@@ -7,9 +7,9 @@ li.underliners::after {
     display: block;
 
     width: 0%;
-    height: 1px;
+    height: 2px;
 
-    background-color: #000;
+    background-color: whitesmoke;
 
     transition: width 0.4s;
 }
