@@ -13,7 +13,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Yoongmotor - Login Admin</title>
+    <title>X - Login</title>
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/logos/android-icon-192x192.png">
     <link rel="icon" type="image/png" href="./assets/img/logos/android-icon-192x192.png">
 
@@ -40,8 +40,8 @@
         document.addEventListener('contextmenu', function(event) { //no right click
         event.preventDefault();
         });
-  </script>
-  
+    </script>
+    
 </head>
 
 <body>
