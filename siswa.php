@@ -48,7 +48,7 @@ session_start();
                         </div>
                         <div class="col-md-6 text-end mt-5">
                             <div class="d-flex justify-content-end align-items-center">
-                            <img src="your_image_url" alt="xx" class="img-fluid">
+                                <img src="your_image_url" alt="xx" class="img-fluid">
 
                                 <p class="me-2 mb-0">Admini</p>
                             </div>
