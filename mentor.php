@@ -1,8 +1,6 @@
 <?php
 // require "head.php";
 session_start();
-
-$_SESSION['page'] = "Dashboard";
 ?>
 
 
@@ -10,7 +8,11 @@ $_SESSION['page'] = "Dashboard";
 <!doctype html>
 <html lang="en">
 
-<?php include "head.php"; ?>
+
+<!-- css datatable -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+</link>
+<link href="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js" rel="stylesheet ">
 
 <body>
     <style>
@@ -22,26 +24,53 @@ $_SESSION['page'] = "Dashboard";
             background-color: red;
         }
     </style>
-    <div class="container-fluid text-center p-0" >
+    <div class="container-fluid text-center p-0">
         <div class="row">
-            <?php include './sidebar.php'; ?>
+            <div class="col-2 p-0" style="background-color: #E75959;">
+                <img src="./assets/icon.jpg" style="height: 5rem" alt="Majar">
+
+
+                <div class="test" style="margin-top: 10vh;">
+                    <p class="text-white p-2"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
+                </div>
+                <p><i class="fa-solid fa-house"></i> mentor</p>
+                <p>mentor</p>
+                <p> kelas</p>
+                <p>partner</p>
+                <p>pembayaran</p>
+                <p style="margin-top: 30vh;"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
+            </div>
             <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <p>Dashboard</p>
-                <p>Hi Nama Admin</p>
-                <img src="" alt="">
-                <p>Admini</p>
-                <p>card</p>
-                <p>perbandingan dengan bulan lalu</p>
-                <h2>Pendaftaran Terbaru</h2>
-                <p>Menampilkan detaik pendaftaran terbaru</p>
+                <div class="grid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="mt-5">Siswa</h2>
+                        </div>
+                        <div class="col-md-6 text-end mt-5">
+                            <div class="d-flex justify-content-end align-items-center">
+                                <img src="your_image_url" alt="xx" class="img-fluid">
+
+                                <p class="me-2 mb-0">Admini</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <p style="color: grey;">Hi, Nama Admin</p>
+                    </div>
+                </div>
+
+
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <th data-sortable="true">Nama</th>
-                        <th data-sortable="true">Status</th>
-                        <th data-sortable="true">Tanggal Pendaftaran</th>
-                        <th data-sortable="true">No Telepon</th>
-                        <th data-sortable="true">Course Yang Diambil</th>
-                        <th data-sortable="true">Status Course</th>
+                        <th>Nama</th>
+                        <th>Status</th>
+                        <th>Tanggal Pendaftaran</th>
+                        <th>No Telepon</th>
+                        <th>Course Yang Diambil</th>
+                        <th>Status Course</th>
                     </thead>
                     <tbody>
                         <tr>

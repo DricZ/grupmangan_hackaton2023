@@ -1,8 +1,6 @@
 <?php
 // require "head.php";
 session_start();
-
-$_SESSION['page'] = "Dashboard";
 ?>
 
 
@@ -10,7 +8,11 @@ $_SESSION['page'] = "Dashboard";
 <!doctype html>
 <html lang="en">
 
-<?php include "head.php"; ?>
+
+<!-- css datatable -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
+</link>
+<link href="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js" rel="stylesheet ">
 
 <body>
     <style>
@@ -24,7 +26,20 @@ $_SESSION['page'] = "Dashboard";
     </style>
     <div class="container-fluid text-center p-0" >
         <div class="row">
-            <?php include './sidebar.php'; ?>
+            <div class="col-2 p-0" style="background-color: #E75959;">
+                <img src="./assets/icon.jpg" style="height: 5rem" alt="Majar">
+
+
+                <div class="test" style="margin-top: 10vh;">
+                    <p class="text-white p-2"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
+                </div>
+                <p><i class="fa-solid fa-house"></i> siswa</p>
+                <p>mentor</p>
+                <p> kelas</p>
+                <p>partner</p>
+                <p>pembayaran</p>
+                <p style="margin-top: 30vh;"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
+            </div>
             <div class="col-10 text-start" style="background-color: #FFF4F4;">
                 <p>Dashboard</p>
                 <p>Hi Nama Admin</p>
@@ -36,12 +51,12 @@ $_SESSION['page'] = "Dashboard";
                 <p>Menampilkan detaik pendaftaran terbaru</p>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <th data-sortable="true">Nama</th>
-                        <th data-sortable="true">Status</th>
-                        <th data-sortable="true">Tanggal Pendaftaran</th>
-                        <th data-sortable="true">No Telepon</th>
-                        <th data-sortable="true">Course Yang Diambil</th>
-                        <th data-sortable="true">Status Course</th>
+                        <th>Nama</th>
+                        <th>Status</th>
+                        <th>Tanggal Pendaftaran</th>
+                        <th>No Telepon</th>
+                        <th>Course Yang Diambil</th>
+                        <th>Status Course</th>
                     </thead>
                     <tbody>
                         <tr>
