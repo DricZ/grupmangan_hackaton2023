@@ -14,12 +14,12 @@
     session_regenerate_id();
 
     if(!$valid){
-        header("Location: ../index.php");
+        header("Location: ./login.php?stats=4");
       }
     else{
         $id = $_SESSION["id"];
         $date = date('Y-m-d H:i:s');
-        $sqlQ = "UPDATE account SET last_login=:last_login WHERE id=:id";
+        $sqlQ = "UPDATE account SET last_login=:last_login WHERE nik=:id";
         $stmtQ = $conn->prepare($sqlQ);
         $stmtQ->bindParam(":last_login", $date);
         $stmtQ->bindParam(":id", $id);
@@ -37,7 +37,7 @@
     
             // Destroy the session
             session_destroy();
-            header("Location: ../login.php?stats=3");
+            header("Location: ./login.php?stats=3");
         }
     }
 ?>

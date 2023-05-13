@@ -49,7 +49,7 @@ if ($responseJson->success == true) {
     if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
         $_SESSION["id"] = $row["nik"];
-        $_SESSION["name"] = $row["full_name"];
+        $_SESSION["full_name"] = $row["full_name"];
         $_SESSION["username"] = $_POST["username"];
         $client_ip = $_SERVER['REMOTE_ADDR'];
         $date = date('Y-m-d H:i:s');
@@ -86,7 +86,7 @@ if ($responseJson->success == true) {
         // }
 
     } else {
-        header("Location: ../?stats=0");
+        header("Location: ../login?stats=0");
     }
 } else {
     // tindakan yang diambil saat reCAPTCHA tidak valid

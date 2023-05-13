@@ -102,6 +102,8 @@ session_start();
             echo "<script>alert('Password tidak cocok!');</script>";
         } else if ($_GET['stats'] == 3) {
             echo "<script>alert('Session Timeout!');</script>";
+        } else if ($_GET['stats'] == 4) {
+            echo "<script>alert('Login Dulu Masbro!');</script>";
         } 
     }
     ?>
