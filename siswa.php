@@ -24,7 +24,7 @@ session_start();
             background-color: red;
         }
     </style>
-    <div class="container-fluid text-center p-0" >
+    <div class="container-fluid text-center p-0">
         <div class="row">
             <div class="col-2 p-0" style="background-color: #E75959;">
                 <img src="./assets/icon.jpg" style="height: 5rem" alt="Majar">
@@ -41,14 +41,28 @@ session_start();
                 <p style="margin-top: 30vh;"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
             </div>
             <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <p>Dashboard</p>
-                <p>Hi Nama Admin</p>
-                <img src="" alt="">
-                <p>Admini</p>
-                <p>card</p>
-                <p>perbandingan dengan bulan lalu</p>
-                <h2>Pendaftaran Terbaru</h2>
-                <p>Menampilkan detaik pendaftaran terbaru</p>
+                <div class="grid">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <h2 class="mt-5">Siswa</h2>
+                        </div>
+                        <div class="col-md-6 text-end mt-5">
+                            <div class="d-flex justify-content-end align-items-center">
+                            <img src="your_image_url" alt="xx" class="img-fluid">
+
+                                <p class="me-2 mb-0">Admini</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <p style="color: grey;">Hi, Nama Admin</p>
+                    </div>
+                </div>
+
+
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <th>Nama</th>
