@@ -29,23 +29,20 @@ include('phps/connect.php');
         <div class="row">
             <?php include './sidebar.php'; ?>
             <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <h2>Siswa</h2>
+                <h2>Kelas</h2>
                 <p>hi,nama admin</p>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <th data-sortable="true">Nama</th>
-                        <th data-sortable="true">Status</th>
-                        <th data-sortable="true">Tanggal Pendaftaran</th>
-                        <th data-sortable="true">No Telepon</th>
-                        <th data-sortable="true">Course Yang Diambil</th>
+                        <th data-sortable="true">Tanggal buka</th>
+                        <th data-sortable="true">Tangal tutup</th>
+                        <th data-sortable="true">Harga</th>
+                        <th data-sortable="true">Kelas</th>
                     </thead>
                     <tbody>
                         <?php
-                            $sql = "SELECT a.full_name, r.name, a.tanggal_pendaftaran, a.no_wa, CONCAT(c.name, ' ', c.kelas) AS nama_kelas
-                            FROM `account` a
-                            LEFT JOIN role r ON r.id = a.id_role
-                            LEFT JOIN user_course uc ON uc.account_id = a.nik
-                            LEFT JOIN course c ON c.id = uc.course_id";
+                            $sql = "SELECT c.name, c.tanggal_buka, c.tanggal_berakhir, c.harga, c.kelas
+                            FROM `course` c ";
 
                             $result = $conn->prepare($sql);
                             $result->execute();
@@ -53,11 +50,11 @@ include('phps/connect.php');
                             foreach($result as $row){
                         ?>
                         <tr>
-                            <td><?php echo $row['full_name'] ?></td>
                             <td><?php echo $row['name'] ?></td>
-                            <td><?php echo $row['tanggal_pendaftaran'] ?></td>
-                            <td><?php echo $row['no_wa'] ?></td>
-                            <td><?php echo $row['nama_kelas'] ?></td>
+                            <td><?php echo $row['tanggal_buka'] ?></td>
+                            <td><?php echo $row['tanggal_berakhir'] ?></td>
+                            <td><?php echo $row['harga'] ?></td>
+                            <td><?php echo $row['kelas'] ?></td>
                         </tr>
                         <?php
                             }

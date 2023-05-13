@@ -1,6 +1,7 @@
 <?php
-// require "head.php";
-session_start();
+include('phps/connect.php');
+// include('phps/check_integrity.php');
+
 ?>
 
 
@@ -24,159 +25,43 @@ session_start();
             background-color: red;
         }
     </style>
-    <div class="container-fluid text-center p-0">
+    <div class="container-fluid text-center p-0" >
         <div class="row">
-            <div class="col-2 p-0" style="background-color: #E75959;">
-                <img src="./assets/icon.jpg" style="height: 5rem" alt="Majar">
-
-
-                <div class="test" style="margin-top: 10vh;">
-                    <p class="text-white p-2"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
-                </div>
-                <p><i class="fa-solid fa-house"></i> siswa</p>
-                <p>mentor</p>
-                <p> kelas</p>
-                <p>partner</p>
-                <p>pembayaran</p>
-                <p style="margin-top: 30vh;"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
-            </div>
+            <?php include './sidebar.php'; ?>
             <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <div class="grid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2 class="mt-5">Siswa</h2>
-                        </div>
-                        <div class="col-md-6 text-end mt-5">
-                            <div class="d-flex justify-content-end align-items-center">
-                                <img src="your_image_url" alt="xx" class="img-fluid">
-
-                                <p class="me-2 mb-0">Admini</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="row">
-                        <p style="color: grey;">Hi, Nama Admin</p>
-                    </div>
-                </div>
-
-
+                <h2>Siswa</h2>
+                <p>hi,nama admin</p>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <th>Nama</th>
-                        <th>Status</th>
-                        <th>Tanggal Pendaftaran</th>
-                        <th>No Telepon</th>
-                        <th>Course Yang Diambil</th>
-                        <th>Status Course</th>
+                        <th data-sortable="true">Nama</th>
+                        <th data-sortable="true">Status</th>
+                        <th data-sortable="true">Tanggal Pendaftaran</th>
+                        <th data-sortable="true">No Telepon</th>
+                        <th data-sortable="true">Course Yang Diambil</th>
                     </thead>
                     <tbody>
+                        <?php
+                            $sql = "SELECT a.full_name, r.name, a.tanggal_pendaftaran, a.no_wa, CONCAT(c.name, ' ', c.kelas) AS nama_kelas
+                            FROM `account` a
+                            LEFT JOIN role r ON r.id = a.id_role
+                            LEFT JOIN user_course uc ON uc.account_id = a.nik
+                            LEFT JOIN course c ON c.id = uc.course_id";
+
+                            $result = $conn->prepare($sql);
+                            $result->execute();
+                            
+                            foreach($result as $row){
+                        ?>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
+                            <td><?php echo $row['full_name'] ?></td>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><?php echo $row['tanggal_pendaftaran'] ?></td>
+                            <td><?php echo $row['no_wa'] ?></td>
+                            <td><?php echo $row['nama_kelas'] ?></td>
                         </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>

@@ -24,53 +24,20 @@ session_start();
             background-color: red;
         }
     </style>
-    <div class="container-fluid text-center p-0">
+    <div class="container-fluid text-center p-0" >
         <div class="row">
-            <div class="col-2 p-0" style="background-color: #E75959;">
-                <img src="./assets/icon.jpg" style="height: 5rem" alt="Majar">
-
-
-                <div class="test" style="margin-top: 10vh;">
-                    <p class="text-white p-2"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
-                </div>
-                <p><i class="fa-solid fa-house"></i> siswa</p>
-                <p>mentor</p>
-                <p> kelas</p>
-                <p>partner</p>
-                <p>pembayaran</p>
-                <p style="margin-top: 30vh;"><i class="fa-solid fa-house fa-2x me-2" style="color: white;"></i> Eashboard</p>
-            </div>
+            <?php include './sidebar.php'; ?>
             <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <div class="grid">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h2 class="mt-5">Siswa</h2>
-                        </div>
-                        <div class="col-md-6 text-end mt-5">
-                            <div class="d-flex justify-content-end align-items-center">
-                                <img src="your_image_url" alt="xx" class="img-fluid">
-
-                                <p class="me-2 mb-0">Admini</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="row">
-                        <p style="color: grey;">Hi, Nama Admin</p>
-                    </div>
-                </div>
-
-
+                <h2>Pembayaran</h2>
+                <p>hi,nama admin</p>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <th>Nama</th>
-                        <th>Status</th>
-                        <th>Tanggal Pendaftaran</th>
-                        <th>No Telepon</th>
-                        <th>Course Yang Diambil</th>
-                        <th>Status Course</th>
+                        <th data-sortable="true">Nama</th>
+                        <th data-sortable="true">Status</th>
+                        <th data-sortable="true">Tanggal Pendaftaran</th>
+                        <th data-sortable="true">No Telepon</th>
+                        <th data-sortable="true">Course Yang Diambil</th>
+                        <th data-sortable="true">Status Course</th>
                     </thead>
                     <tbody>
                         <tr>
