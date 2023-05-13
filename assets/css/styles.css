@@ -35,7 +35,11 @@ li.underliners:hover::after {
     transition: .5s ease-in-out;
 }
 
-.sidebar:hover{
+.sidebar .active{
     background-color: #EC3333;
+}
+
+.sidebar:hover{
+    background-color: #F07167;
 }
 

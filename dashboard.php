@@ -1,6 +1,6 @@
 <?php
-// require "head.php";
-session_start();
+require "phps/connect.php";
+require "phps/check_integrity.php";
 
 $_SESSION['page'] = "Dashboard";
 ?>
@@ -22,14 +22,22 @@ $_SESSION['page'] = "Dashboard";
             background-color: red;
         }
     </style>
-    <div class="container-fluid text-center p-0" >
+    <div class="container-fluid text-center p-0">
         <div class="row">
             <?php include './sidebar.php'; ?>
-            <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <p>Dashboard</p>
-                <p>Hi Nama Admin</p>
-                <img src="" alt="">
-                <p>Admini</p>
+            <div class="col-10 text-start p-5" style="background-color: #FFF4F4;">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>Dashboard</h2>
+                        <p style="color: grey;">Hi, Nama Admin</p>
+                    </div>
+                    <div class="col-md-6 text-end align-self-center">
+                        <img src="https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="" class="img-fluid rounded-circle" width="40" height="40" >
+                        <p style="display: inline-block; vertical-align: middle; margin-left: 10px;">Admini</p>
+                    </div>
+                </div>
+
+
                 <p>card</p>
                 <p>perbandingan dengan bulan lalu</p>
                 <h2>Pendaftaran Terbaru</h2>
