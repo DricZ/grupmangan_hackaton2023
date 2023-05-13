@@ -21,7 +21,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.css" rel="stylesheet">
     
     <link rel="icon" type="image/x-icon" href="./assets/img/logo-ct.png" style="margin: -10px;">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 
