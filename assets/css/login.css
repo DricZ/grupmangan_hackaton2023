@@ -151,7 +151,7 @@ button:hover{
     margin-bottom: 20px;
 }
 
-.back{
+#btnback{
     margin-left: 0.6cm;
     width: 3.5cm;
     height: 0.8cm;
@@ -165,5 +165,11 @@ button:hover{
     align-items: center;
     border-radius: 10px;
     padding: 5px;
+    transition: .2s ease-in;
+    cursor:pointer;
+}
+
+#btnback:hover{
+    background: #e47171;
 }
 
