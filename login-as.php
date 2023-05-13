@@ -28,7 +28,8 @@
     <body>
         
         <div class="main">
-            <h1 style="text-align=center">Anda ingin login sebagai:</h1>
+            <div style="text-align:center"><h2>Anda ingin login sebagai:</h2>
+            </div>
             <div class="content">
                 <h3>Admin</h3>
             </div>

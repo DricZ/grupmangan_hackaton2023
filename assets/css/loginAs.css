@@ -35,3 +35,8 @@ body{
     margin: auto;
     margin-top: 0.8cm;
 }
+
+.content:hover{
+    background-color: white;
+    display: grid;
+}
