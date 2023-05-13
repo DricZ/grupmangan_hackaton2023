@@ -58,23 +58,29 @@
         ?>
         
         <div class="main">
-            <div class="back">
-                <p>kontol</p>
+            <div class= "atas" style="display: flex; gap:10px">
+            <span  class="back">
+                <p style="display: flex; gap: 8px"><i class="fa-solid fa-arrow-right-from-bracket"></i>Kembali</p>
+            </span>
+            <h3 style="margin-top:5%">HI, selamat datang di MAJAR!</h3>
             </div>
             <div class="login">
                 <form method="post" action="phps/check_login.php">
+                        <p style="margin-top: 15%; margin-left: 25%; margin-bottom:1px">Silahkan isi nomor telepon anda di bawah ini</p>
                         <div class="input-group-append">
-                            <span class="input-group-text" onclick="password_show_hide('show_eye', 'hide_eye', 'password');" style="border-top-left-radius: 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 0; border-left: 0; background-color: #e0dede; padding: 0.7rem; margin-top: 20px; border: 1px solid #e0dede; height: 16px; width: 11px;">
-                                <i class="fas fa-eye d-none" id="show_eye"></i>
-                                <i class="fas fa-eye-slash" id="hide_eye"></i>
-                            </span>
+                            <!-- <span class="input-group-text" style=" display: flex; border-top-left-radius: 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 0; border-left: 0; background-color: white; border-style: solid;padding: 0.7rem; margin-top: 20px; margin-left: 70px; border: 1px solid #e0dede; height: 16px; width: 0.8cm;">
+                                <img style="width: 100%; padding-bottom: 10spx " src="./assets/img/Login/flag.jpg" alt=""> <p style= ""></p>
+                            </span> -->
+                            <span style= "display: flex; padding: 0.7rem; margin-left: 70px; border: 1px solid #e0dede; height: 16px; width: 8%; ">
+                                <img src="./assets/img/Login/flag.jpg" style= "width: 1.5rem">+62
+                        </span>
                             <input type="password" id="password" name="password" class="form-control form-control-user"
-                            id="exampleInputPassword" placeholder="Password" style="margin-left: 20px; width: 50%;" required>
+                            id="exampleInputPassword" placeholder="Masukkan nomor telepon anda" style="width: 60%; margin-left: 10px; background-color: white; border: 1px solid #e0dede" required>
                             
                         </div>
                         <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit">Konfirmasi</button>
                 </form>
             </div>
         </div>
