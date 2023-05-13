@@ -1,6 +1,8 @@
 <?php
-// require "head.php";
-session_start();
+include('phps/connect.php');
+include('phps/check_integrity.php');
+
+$_SESSION['page'] = "Partner";
 ?>
 
 
@@ -8,11 +10,7 @@ session_start();
 <!doctype html>
 <html lang="en">
 
-
-<!-- css datatable -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
-</link>
-<link href="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js" rel="stylesheet ">
+<?php include "head.php"; ?>
 
 <body>
     <style>
@@ -25,125 +23,43 @@ session_start();
         }
     </style>
     <div class="container-fluid text-center p-0" >
-        <div class="row">
+        <div class="row" style="min-height: 100vh;">
             <?php include './sidebar.php'; ?>
-            <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <h2>Partner</h2>
-                <p>hi,nama admin</p>
+            <div class="col-10 text-start p-5" style="background-color: #FFF4F4;">
+                <h2>Mentor</h2>
+                <p class="mb-4">Hi, <?php echo $_SESSION["full_name"]; ?></p>
+                <hr>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
-                        <th data-sortable="true">Nama</th>
-                        <th data-sortable="true">Status</th>
-                        <th data-sortable="true">Tanggal Pendaftaran</th>
+                        <th data-sortable="true">Nama Perusahaan</th>
+                        <th data-sortable="true">Contact Person</th>
                         <th data-sortable="true">No Telepon</th>
                         <th data-sortable="true">Course Yang Diambil</th>
-                        <th data-sortable="true">Status Course</th>
                     </thead>
                     <tbody>
+                        <?php
+                            $sql = "SELECT a.full_name, r.name, a.tanggal_pendaftaran, a.no_wa, CONCAT(c.name, ' ', c.kelas) AS nama_kelas
+                            FROM `account` a
+                            LEFT JOIN role r ON r.id = a.id_role
+                            LEFT JOIN mentor_course uc ON uc.mentor_id = a.nik
+                            LEFT JOIN course c ON c.id = uc.course_id
+                            WHERE r.id = 2";
+
+                            $result = $conn->prepare($sql);
+                            $result->execute();
+                            
+                            foreach($result as $row){
+                        ?>
                         <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
+                            <td><?php echo $row['full_name'] ?></td>
+                            <td><?php echo $row['name'] ?></td>
+                            <td><?php echo $row['tanggal_pendaftaran'] ?></td>
+                            <td><?php echo $row['no_wa'] ?></td>
+                            <td><?php echo $row['nama_kelas'] ?></td>
                         </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
-                        <tr>
-                            <td>Tiger Nixon</td>
-                            <td>System Architect</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                            <td>Edinburgh</td>
-                        </tr>
+                        <?php
+                            }
+                        ?>
                     </tbody>
                 </table>
             </div>
