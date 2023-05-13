@@ -23,7 +23,9 @@
     <link rel="icon" type="image/x-icon" href="./assets/img/logo-ct.png" style="margin: -10px;">
     <link rel="stylesheet" href="./assets/css/login.css">
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <script>
         //keyboard anti inspection
