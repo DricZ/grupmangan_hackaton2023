@@ -160,7 +160,7 @@ button:hover{
     margin-bottom: 20px;
 }
 
-#btnback{
+.back{
     margin-left: 0.6cm;
     width: 3.5cm;
     height: 0.8cm;
@@ -178,7 +178,7 @@ button:hover{
     cursor:pointer;
 }
 
-#btnback:hover{
+.back:hover{
     background: #e47171;
 }
 

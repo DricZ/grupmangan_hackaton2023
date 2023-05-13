@@ -64,16 +64,16 @@ session_start();
                 <span class="back">
                     <p style="display: flex; gap: 8px"><i class="fa-solid fa-arrow-right-from-bracket"></i>Kembali</p>
                 </span>
-                <h3 style="margin-top:5%">HI, selamat datang di MAJAR!</h3>
             </div>
+            <h3 style="margin-left:28%;margin-top:5%">HI, selamat datang di MAJAR!</h3>
             <div class="login">
                 <form method="post" action="phps/check_login.php">
                 <input type="text" name="username" placeholder="Username" required>
                     <div class="form-group">
                         <div class="input-group-append">
-                            <input style="width: 55%" type="password" id="password" name="password" class="form-control form-control-user"
-                            id="exampleInputPassword" placeholder="Password" style="border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: 0; margin-right: 0; margin-left: 60px; width: 50%;" required>
-                            <span class="input-group-text" onclick="password_show_hide('show_eye', 'hide_eye', 'password');" style="border-top-left-radius: 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 0; border-left: 0; background-color: #e0dede; padding: 11px; margin-top: 20px; border: 1px solid #e0dede; height: 16px; width: 11px;">
+                            <input  type="password" id="password" name="password" class="form-control form-control-user"
+                            id="exampleInputPassword" placeholder="Password" style="border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: 0; margin-right: 0; margin-left: 60px; width: 58%;" required>
+                            <span class="input-group-text" onclick="password_show_hide('show_eye', 'hide_eye', 'password');" style="border-top-left-radius: 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 0; border-left: 0; background-color: #e0dede; padding: 11px; margin-top: 20px; border: 1px solid #e0dede; height: 16px; width: 11px; padding-right: 20px">
                                 <i class="fas fa-eye d-none" id="show_eye"></i>
                                 <i class="fas fa-eye-slash" id="hide_eye"></i>
                             </span>
@@ -81,9 +81,6 @@ session_start();
                         <div class="input-group-append" style="justify-content: center;">
                             <a id="fpass" href="./fpassword.php">Lupa Password?</a>
                         </div>
-                        
-                        <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
-                    </div>
                     <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
             </div>
             <button type="submit">Konfirmasi</button>
