@@ -1,37 +1,20 @@
+<?php
+    // require "head.php";
+    session_start();
+?>
 <!doctype html>
 <html lang="en">
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Majar</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <!-- aos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
-    integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <!-- style -->
-  <link rel="stylesheet" href="./assets/css/styles.css">
-
-  <!-- sweetalert -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.min.css">
-
-  <!-- icon -->
-  <!-- <link rel="icon" type="image/png" href="./assets/icon.jpg"> -->
-  <link rel="icon" type="image/png" href="./assets/icon.jpg" sizes="300x120">
-
-  <!-- type -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700">
-
-</head>
+<?php
+  include "head.php";
+?>
 
 <body>
 
   <nav class="navbar navbar-expand-lg shadow fixed-top" style="background-color: #E75959;">
     <div class="container-fluid">
       <a class="navbar-brand text-center" href="#">
-        <img src="./assets/icon.jpg"  alt="Majar" width="10%">
+        <img src="./assets/icon.jpg"  alt="Majar" width="200px">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -320,8 +303,6 @@
       </div>
     </div>
   </div>
-
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
