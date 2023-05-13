@@ -1,19 +1,19 @@
 
-AOS.init();
+// AOS.init();
 
-AOS.init({
-  duration: 1000,
-  delay: 500,
-  easing: 'ease-in-out',
-  once: true
-});
+// AOS.init({
+//   duration: 1000,
+//   delay: 500,
+//   easing: 'ease-in-out',
+//   once: true
+// });
 
-alert("*")
+// alert("*")
 
-Swal.fire({
-  position: 'center',
-  icon: 'success',
-  title: 'Data Sukses Dikirim',
-  showConfirmButton: false,
-  timer: 1500
-})
+// Swal.fire({
+//   position: 'center',
+//   icon: 'success',
+//   title: 'Data Sukses Dikirim',
+//   showConfirmButton: false,
+//   timer: 1500
+// })
