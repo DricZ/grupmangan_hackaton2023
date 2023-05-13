@@ -1,6 +1,6 @@
 /*Underline*/
 body{
-    background-color: #FFF4F4;
+    /* background-color: #FFF4F4; */
 }
 li.underliners::after {
     content: " ";
