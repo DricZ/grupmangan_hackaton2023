@@ -2,7 +2,7 @@
 body{
     background-color: #FFF4F4;
 }
-li::after {
+li.underliners::after {
     content: " ";
     display: block;
 
@@ -14,7 +14,7 @@ li::after {
     transition: width 0.4s;
 }
 
-li:hover::after {
+li.underliners:hover::after {
     width: 100%;
 }
 
@@ -29,3 +29,4 @@ li:hover::after {
 .carousel-inner .card{
   min-height: 300px;
 }
+
