@@ -306,11 +306,15 @@
   </div>
 
   <?php 
-  if(isset($_GET['stats'])){
-    if($_GET['stats'] == 0){
-      echo "<alert>Berhasil Log-Out</alert>";
-    }
-  } 
+  if (isset($_GET['stats'])) {
+    if ($_GET['stats'] == 0) {
+        echo "<script>alert('Berhasil Logout!');</script>";
+    } else if ($_GET['stats'] == 1) {
+        echo "<script>alert('Input berhasil!');</script>";
+    } else if ($_GET['stats'] == 2) {
+        echo "<script>alert('Password tidak cocok!');</script>";
+    } 
+  }
   ?>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"

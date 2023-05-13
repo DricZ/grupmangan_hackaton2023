@@ -1,6 +1,8 @@
 <?php
 // require "head.php";
 session_start();
+require "phps/connect.php";
+require "phps/check_integrity.php";
 
 $_SESSION['page'] = "Dashboard";
 ?>

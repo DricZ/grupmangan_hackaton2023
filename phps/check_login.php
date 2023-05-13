@@ -49,6 +49,7 @@ if ($responseJson->success == true) {
     if ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
 
         $_SESSION["id"] = $row["nik"];
+        $_SESSION["name"] = $row["full_name"];
         $_SESSION["username"] = $_POST["username"];
         $client_ip = $_SERVER['REMOTE_ADDR'];
         $date = date('Y-m-d H:i:s');

@@ -3,7 +3,7 @@
 
     // header("Refresh: 1; url=$_SERVER[REQUEST_URI]");
 
-    if (isset($_SESSION["id"]) && isset($_SESSION["username"]) && isset($_SESSION["full_name"]) && isset($_SESSION["branch_id"]) && isset($_SESSION["branch_name"]) && isset($_SESSION["eID"])){
+    if (isset($_SESSION["id"]) && isset($_SESSION["username"]) && isset($_SESSION["full_name"])){
         $valid = true;
     }else{
         $valid = false;
@@ -14,7 +14,7 @@
     session_regenerate_id();
 
     if(!$valid){
-        header("Location: ./index.php");
+        header("Location: ../index.php");
       }
     else{
         $id = $_SESSION["id"];
@@ -37,7 +37,7 @@
     
             // Destroy the session
             session_destroy();
-            header("Location: ./index.php?stats=1");
+            header("Location: ../login.php?stats=3");
         }
     }
 ?>
