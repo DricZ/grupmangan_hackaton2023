@@ -12,9 +12,9 @@
 <body>
 
   <nav class="navbar navbar-expand-lg shadow fixed-top" style="background-color: #E75959;">
-    <div class="container-fluid">
+    <div class="container">
       <a class="navbar-brand text-center" href="#">
-        <img src="./assets/icon.jpg"  alt="Majar" width="200px">
+        <img src="./assets/icon.jpg" style="height: 5rem" alt="Majar">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
         aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,10 +22,10 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item  mx-2 underliners">
+          <li class="nav-item mx-2 underliners">
             <a class="nav-link active text-white pb-0" aria-current="page" href="#">Tentang Kami</a>
           </li>
-          <li class="nav-item  mx-2 underliners">
+          <li class="nav-item mx-2 underliners">
             <a class="nav-link active text-white pb-0" aria-current="page" href="#">Pelatihan</a>
           </li>
           <li class="nav-item mx-2 underliners">
@@ -44,15 +44,17 @@
     </div>
   </nav>
 
-  <div style="background-color: #FFF4F4;">
+  <div style="background-color: #FFF4F4; padding-top: 4rem; height: 100vh;">
     <div class="container text-center mt-5" >
       <div class="row p-5 mt-3">
         <div class="col-sm-12 col-lg-7 text-start">
-          <h1 class="mt-5">Dengan Majar, usiamu tak menjadi halangan untuk mengikuti pelatihan dan meraih kemajuan kariermu!</h1>
+          <h1 class="mt-5">Dengan Majar, </h1>
+          <h1>usiamu tak menjadi halangan untuk mengikuti pelatihan dan meraih kemajuan kariermu!</h1>
+          <hr>
           <h3 class="d-inline-block ">Ayo Daftar Sekarang</h3>
           <button type="button" class="btn btn-outline-dark btn-light ms-2 mb-2">Daftar</button>
         </div>
-        <div class="col-sm-12 col-lg-5 mt-3">
+        <div class="col-sm-12 col-lg-5 mt-3" data-aos="fade-left" data-aos-duration="1000">
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
               <div class="carousel-item active" data-bs-interval="2000">
@@ -113,7 +115,7 @@
 
   <div style="background-color: #FFF4F4;">
     <div class="container text-center mb-5" style="border-radius: 270px 220px 80px 90px;
-  background-color: white">
+  background-color: white" data-aos="zoom-in-up" data-aos-duration="1000">
       <div class="row p-5">
         <div class="col">
           <h1 class=""><span class="" style="border-bottom: 3px solid #E75959; color: black;">Tentang Kami</span></h1>
@@ -320,6 +322,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
     integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script>
+    AOS.init();
+  </script>
 
   <!-- sweet alert -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>

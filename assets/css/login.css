@@ -6,7 +6,7 @@ body{
     align-items: center;
     min-height:100vh;
     font-family: 'Jost', sans-serif;
-    background: linear-gradient(to bottom, #FF6600, #FF6600, #FF6600);
+    background: linear-gradient(to bottom, #FFF4F4, #FFF4F4, #FFF4F4);
 }
 
 .input-group-append, .input-group-prepend {
@@ -22,12 +22,12 @@ body{
 
 #fpass:hover{
     text-decoration: none;
-    color: #FF6600;
+    color: #E75959;
     transition: ease-out .3s;
 }
 
 .main{
-    width: 350px;
+    width: 40vw;
     height: auto;
     /* background: red; */
     overflow: hidden;
@@ -101,7 +101,7 @@ button{
     justify-content: center;
     display: block;
     color: #fff;
-    background: #d26600;
+    background: #E75959;
     font-size: 1em;
     font-weight: bold;
     margin-top: 20px;
@@ -113,7 +113,7 @@ button{
 }
 
 button:hover{
-    background: #FF6600;
+    background: #e47171;
 }
 
 .signup{
