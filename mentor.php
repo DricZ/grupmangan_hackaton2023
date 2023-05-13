@@ -1,7 +1,8 @@
 <?php
 include('phps/connect.php');
-// include('phps/check_integrity.php');
+include('phps/check_integrity.php');
 
+$_SESSION['page'] = "Mentor";
 ?>
 
 
@@ -9,11 +10,7 @@ include('phps/connect.php');
 <!doctype html>
 <html lang="en">
 
-
-<!-- css datatable -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css" rel="stylesheet">
-</link>
-<link href="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js" rel="stylesheet ">
+<?php include "head.php"; ?>
 
 <body>
     <style>
@@ -26,11 +23,12 @@ include('phps/connect.php');
         }
     </style>
     <div class="container-fluid text-center p-0" >
-        <div class="row">
+        <div class="row" style="min-height: 100vh;">
             <?php include './sidebar.php'; ?>
-            <div class="col-10 text-start" style="background-color: #FFF4F4;">
-                <h2>Siswa</h2>
-                <p>hi,nama admin</p>
+            <div class="col-10 text-start p-5" style="background-color: #FFF4F4;">
+                <h2>Mentor</h2>
+                <p class="mb-4">Hi, <?php echo $_SESSION["full_name"]; ?></p>
+                <hr>
                 <table id="example" class="table table-striped" style="width:100%">
                     <thead>
                         <th data-sortable="true">Nama</th>
@@ -44,8 +42,9 @@ include('phps/connect.php');
                             $sql = "SELECT a.full_name, r.name, a.tanggal_pendaftaran, a.no_wa, CONCAT(c.name, ' ', c.kelas) AS nama_kelas
                             FROM `account` a
                             LEFT JOIN role r ON r.id = a.id_role
-                            LEFT JOIN user_course uc ON uc.account_id = a.nik
-                            LEFT JOIN course c ON c.id = uc.course_id";
+                            LEFT JOIN mentor_course uc ON uc.mentor_id = a.nik
+                            LEFT JOIN course c ON c.id = uc.course_id
+                            WHERE r.id = 2";
 
                             $result = $conn->prepare($sql);
                             $result->execute();

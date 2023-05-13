@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Bulan Mei 2023 pada 20.53
+-- Waktu pembuatan: 14 Bulan Mei 2023 pada 00.46
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.1.2
 
@@ -47,7 +47,8 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`nik`, `full_name`, `username`, `password`, `no_wa`, `gender`, `alamat`, `id_role`, `tanggal_pendaftaran`, `last_login`, `id_partner`, `last_login_ip`) VALUES
-('asdasd', 'Audrico', 'admin', 'admin', '24123123', 'kntl2', 'asdasdd', 1, '2023-05-14', '2023-05-13', NULL, NULL);
+('asdasd', 'Audrico', 'admin', 'admin', '24123123', 'kntl2', 'asdasdd', 1, '2023-05-14', '2023-05-14', NULL, NULL),
+('asdsad', 'asdad', 'aasd', 'asd', 'asd', 'asd', 'asd', 3, '2023-05-14', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -178,7 +179,11 @@ CREATE TABLE `role` (
 --
 
 INSERT INTO `role` (`id`, `name`) VALUES
-(1, 'admin');
+(1, 'admin'),
+(2, 'pengajar'),
+(3, 'pendaftar'),
+(4, 'student'),
+(5, 'alumni');
 
 -- --------------------------------------------------------
 
@@ -375,7 +380,7 @@ ALTER TABLE `pertemuan`
 -- AUTO_INCREMENT untuk tabel `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `sponsor`
