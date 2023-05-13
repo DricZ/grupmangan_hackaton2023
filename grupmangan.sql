@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Bulan Mei 2023 pada 15.29
--- Versi server: 10.4.25-MariaDB
--- Versi PHP: 7.4.30
+-- Waktu pembuatan: 13 Bulan Mei 2023 pada 20.53
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,16 +29,25 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `account` (
   `nik` varchar(200) NOT NULL,
-  `full_name` varchar(200) NOT NULL,
-  `no_wa` varchar(200) NOT NULL,
-  `gender` varchar(200) NOT NULL,
-  `alamat` varchar(200) NOT NULL,
+  `full_name` varchar(64) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `no_wa` varchar(18) NOT NULL,
+  `gender` varchar(8) NOT NULL,
+  `alamat` varchar(32) NOT NULL,
   `id_role` int(11) NOT NULL,
   `tanggal_pendaftaran` date NOT NULL,
-  `last_login` date NOT NULL,
-  `id_partner` int(11) NOT NULL,
-  `id` int(11) NOT NULL
+  `last_login` date DEFAULT NULL,
+  `id_partner` int(11) DEFAULT NULL,
+  `last_login_ip` varchar(12) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `account`
+--
+
+INSERT INTO `account` (`nik`, `full_name`, `username`, `password`, `no_wa`, `gender`, `alamat`, `id_role`, `tanggal_pendaftaran`, `last_login`, `id_partner`, `last_login_ip`) VALUES
+('asdasd', 'Audrico', 'admin', 'admin', '24123123', 'kntl2', 'asdasdd', 1, '2023-05-14', '2023-05-13', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -163,6 +172,13 @@ CREATE TABLE `role` (
   `id` int(11) NOT NULL,
   `name` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `role`
+--
+
+INSERT INTO `role` (`id`, `name`) VALUES
+(1, 'admin');
 
 -- --------------------------------------------------------
 
@@ -359,7 +375,7 @@ ALTER TABLE `pertemuan`
 -- AUTO_INCREMENT untuk tabel `role`
 --
 ALTER TABLE `role`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `sponsor`

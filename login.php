@@ -68,21 +68,21 @@ session_start();
             </div>
             <div class="login">
                 <form method="post" action="phps/check_login.php">
-                    <p style="margin-top: 15%; margin-left: 25%; margin-bottom:1px">Silahkan isi nomor telepon anda di
-                        bawah ini</p>
-                    <div class="input-group-append">
-                        <!-- <span class="input-group-text" style=" display: flex; border-top-left-radius: 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 0; border-left: 0; background-color: white; border-style: solid;padding: 0.7rem; margin-top: 20px; margin-left: 70px; border: 1px solid #e0dede; height: 16px; width: 0.8cm;">
-                                <img style="width: 100%; padding-bottom: 10spx " src="./assets/img/Login/flag.jpg" alt=""> <p style= ""></p>
-                            </span> -->
-                        <span
-                            style="display: flex; padding: 0.7rem; margin-left: 70px; border: 1px solid #e0dede; height: 16px; width: 8%; ">
-                            <img src="./assets/img/Login/flag.jpg" style="width: 1.5rem">+62
-                        </span>
-                        <input type="password" id="password" name="password" class="form-control form-control-user"
-                            id="exampleInputPassword" placeholder="Masukkan nomor telepon anda"
-                            style="width: 60%; margin-left: 10px; background-color: white; border: 1px solid #e0dede"
-                            required>
-
+                <input type="text" name="username" placeholder="Username" required>
+                    <div class="form-group">
+                        <div class="input-group-append">
+                            <input style="width: 55%" type="password" id="password" name="password" class="form-control form-control-user"
+                            id="exampleInputPassword" placeholder="Password" style="border-top-right-radius: 0; border-bottom-right-radius: 0; border-right: 0; margin-right: 0; margin-left: 60px; width: 50%;" required>
+                            <span class="input-group-text" onclick="password_show_hide('show_eye', 'hide_eye', 'password');" style="border-top-left-radius: 0; border-top-right-radius: 5px; border-bottom-right-radius: 5px; border-bottom-left-radius: 0; border-left: 0; background-color: #e0dede; padding: 11px; margin-top: 20px; border: 1px solid #e0dede; height: 16px; width: 11px;">
+                                <i class="fas fa-eye d-none" id="show_eye"></i>
+                                <i class="fas fa-eye-slash" id="hide_eye"></i>
+                            </span>
+                        </div>
+                        <div class="input-group-append" style="justify-content: center;">
+                            <a id="fpass" href="./fpassword.php">Lupa Password?</a>
+                        </div>
+                        
+                        <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
                     </div>
                     <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
             </div>
@@ -92,6 +92,21 @@ session_start();
     </div>
     </div>
 
+    <?php
+    if (isset($_GET['stats'])) {
+        if ($_GET['stats'] == 0) {
+            echo "<script>alert('Input gagal!');</script>";
+        } else if ($_GET['stats'] == 1) {
+            echo "<script>alert('Input berhasil!');</script>";
+        } else if ($_GET['stats'] == 2) {
+            echo "<script>alert('Password tidak cocok!');</script>";
+        } else if ($_GET['stats'] == 3) {
+            echo "<script>alert('Session Timeout!');</script>";
+        } else if ($_GET['stats'] == 4) {
+            echo "<script>alert('Login Dulu Masbro!');</script>";
+        } 
+    }
+    ?>
 </body>
 
 
