@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 14 Bulan Mei 2023 pada 00.46
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 8.1.2
+-- Waktu pembuatan: 14 Bulan Mei 2023 pada 02.02
+-- Versi server: 10.4.25-MariaDB
+-- Versi PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,8 +47,10 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`nik`, `full_name`, `username`, `password`, `no_wa`, `gender`, `alamat`, `id_role`, `tanggal_pendaftaran`, `last_login`, `id_partner`, `last_login_ip`) VALUES
-('asdasd', 'Audrico', 'admin', 'admin', '24123123', 'kntl2', 'asdasdd', 1, '2023-05-14', '2023-05-14', NULL, NULL),
-('asdsad', 'asdad', 'aasd', 'asd', 'asd', 'asd', 'asd', 3, '2023-05-14', NULL, NULL, NULL);
+('1239090', 'Pak suryano', 'Pengajar Handal Hiya', 'iniPassword', '08192381', 'Laki-lak', 'Jl. Ahmad Yani', 2, '2020-01-09', '2023-05-13', 2, '1234'),
+('36241123', 'Suriyatno suritne', 'Pencari Ilmu', 'uuuwwwwsss', '08192423', 'Laki-lak', 'Jl. Ahmad Yani', 4, '2020-01-09', '2023-05-13', 2, '1234'),
+('asdasd', 'Audrico', 'admin', 'admin', '24123123', 'Laki-lak', 'asdasdd', 1, '2023-05-14', '2023-05-14', NULL, NULL),
+('asdsad', 'asdad', 'aasd', 'asd', 'asd', 'Perempua', 'asd', 3, '2023-05-14', NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -67,6 +69,15 @@ CREATE TABLE `course` (
   `kuota` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `course`
+--
+
+INSERT INTO `course` (`id`, `name`, `tanggal_buka`, `tanggal_berakhir`, `harga`, `kelas`, `description`, `kuota`) VALUES
+(1, 'Kelas Public Speaking', '2023-01-02', '2023-06-22', 150000, 'C', 'Pelatihan komprehensif terkait Public Speaking yang akan membantu peserta mengembangkan pengetahuan, keterampilan dan sikap yang diperlukan untuk menjadi seorang marketing hingga public speaker profes', 50),
+(2, 'Kelas Menjahit', '2022-07-07', '2022-12-23', 150000, 'A', 'Pelatihan komprehensif terkait menjahit yang akan membantu peserta mengembangkan pengetahuan, keterampilan dan sikap yang diperlukan untuk menjadi seorang penjahit yang telaten dan teliti', 50),
+(3, 'Kelas Menulis', '2023-07-06', '2023-12-13', 200000, 'B', 'Pelatihan komprehensif terkait menulis yang akan membantu peserta mengembangkan pengetahuan, keterampilan dan sikap yang diperlukan untuk menjadi seorang penulis yang profesional', 50);
+
 -- --------------------------------------------------------
 
 --
@@ -77,9 +88,19 @@ CREATE TABLE `lampiran` (
   `id` int(11) NOT NULL,
   `id_account` varchar(200) NOT NULL,
   `id_tipe` int(11) NOT NULL,
-  `description` int(11) NOT NULL,
+  `description` varchar(200) NOT NULL,
   `tanggal_upload` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `lampiran`
+--
+
+INSERT INTO `lampiran` (`id`, `id_account`, `id_tipe`, `description`, `tanggal_upload`) VALUES
+(1, 'asdasd', 3, '0', '2023-05-02'),
+(2, 'asdasd', 6, 'Foto KK', '2023-05-02'),
+(3, 'asdsad', 3, 'Foto ijazah SMA', '2023-03-15'),
+(4, 'asdsad', 5, 'Foto KTP', '2023-02-15');
 
 -- --------------------------------------------------------
 
@@ -91,10 +112,18 @@ CREATE TABLE `materi` (
   `id` int(11) NOT NULL,
   `nama` varchar(200) NOT NULL,
   `description` varchar(200) NOT NULL,
-  `location` int(11) NOT NULL,
+  `location` varchar(200) NOT NULL,
   `tipe` varchar(200) NOT NULL,
   `id_pertemuan` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `materi`
+--
+
+INSERT INTO `materi` (`id`, `nama`, `description`, `location`, `tipe`, `id_pertemuan`) VALUES
+(1, 'PPT Dasar Public Speaking', 'Materi untuk dipelajari hari ini, tolong dibaca terlebih dahulu sebelum saya menjelaskan', '/asset/public speaking/dasar public speaking.ppt', 'PPT', 1),
+(2, 'PPT Dasar Public Speaking 2', 'Materi untuk dipelajari hari ini, tolong dibaca terlebih dahulu sebelum saya menjelaskan', '/asset/public speaking/dasar public speaking2.ppt', 'PPT', 2);
 
 -- --------------------------------------------------------
 
@@ -104,9 +133,16 @@ CREATE TABLE `materi` (
 
 CREATE TABLE `mentor_course` (
   `id` int(11) NOT NULL,
-  `mentor_id` int(11) NOT NULL,
+  `mentor_id` varchar(200) NOT NULL,
   `course_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `mentor_course`
+--
+
+INSERT INTO `mentor_course` (`id`, `mentor_id`, `course_id`) VALUES
+(1, '1239090', 1);
 
 -- --------------------------------------------------------
 
@@ -120,6 +156,14 @@ CREATE TABLE `metode_pembayaran` (
   `tanggal_pembayaran` date NOT NULL,
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `metode_pembayaran`
+--
+
+INSERT INTO `metode_pembayaran` (`id`, `metode_pembayaran`, `tanggal_pembayaran`, `total`) VALUES
+(1, 'Qris', '2023-05-01', 150000),
+(2, 'M-banking', '2023-02-08', 1000000);
 
 -- --------------------------------------------------------
 
@@ -136,6 +180,14 @@ CREATE TABLE `partner` (
   `tanggal_pendaftaran` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `partner`
+--
+
+INSERT INTO `partner` (`id`, `nama_perusahaan`, `nama_kontak`, `alamat`, `no_telp`, `tanggal_pendaftaran`) VALUES
+(1, 'PT JAYA JAYA JAYA', 'Pak Sudaarsono (Marketing)', 'Jl. Kembang Wangi No.1', '088776655443', '2023-03-07'),
+(2, 'PT. IndoCeria', 'Pak Robertus (Marketing)', 'Jl. Suriname No. 4', '0827652342', '2023-05-16');
+
 -- --------------------------------------------------------
 
 --
@@ -148,6 +200,15 @@ CREATE TABLE `pembayaran` (
   `tanggal_pembayaran` date NOT NULL,
   `total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pembayaran`
+--
+
+INSERT INTO `pembayaran` (`id`, `id_metode_pembayaran`, `tanggal_pembayaran`, `total`) VALUES
+(1, 2, '2023-05-01', 10000000),
+(2, 1, '2023-02-08', 8000000),
+(3, 1, '2023-05-02', 150000);
 
 -- --------------------------------------------------------
 
@@ -162,6 +223,14 @@ CREATE TABLE `pertemuan` (
   `description` varchar(200) NOT NULL,
   `id_sponsor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `pertemuan`
+--
+
+INSERT INTO `pertemuan` (`id`, `topik`, `course_id`, `description`, `id_sponsor`) VALUES
+(1, 'Dasar Public Speaking 1', 1, 'Mempelajari Public speaking agar dapat berbicara dengan orang lain dengan baik', 1),
+(2, 'Dasar Public Speaking 2', 1, 'Mempelajari cara membuka percakapan dengan orang', 2);
 
 -- --------------------------------------------------------
 
@@ -203,6 +272,14 @@ CREATE TABLE `sponsor` (
   `id_pembayaran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data untuk tabel `sponsor`
+--
+
+INSERT INTO `sponsor` (`id`, `name`, `no_wa`, `perusahaan`, `alamat`, `description`, `harga`, `id_partner`, `id_pembayaran`) VALUES
+(1, 'Pak sudarsono', '082312312', 'PT. IndoCeria', 'Jl. Jalanin dulu no. 1', 'sponsorship mempromokan sabun', 10000000, 2, 1),
+(2, 'Pak supardi', '081247123', 'PT. Jaya Jaya Jaya', 'Jl. Suriname no. 4', 'Menjual peralatan anak', 8000000, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -213,6 +290,18 @@ CREATE TABLE `tipe_lampiran` (
   `id` int(11) NOT NULL,
   `tipe` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `tipe_lampiran`
+--
+
+INSERT INTO `tipe_lampiran` (`id`, `tipe`) VALUES
+(1, 'Ijazah SD'),
+(2, 'Ijazah SMP'),
+(3, 'Ijazah SMA'),
+(4, 'Ijazah Kuliah'),
+(5, 'Foto KTP'),
+(6, 'Foto KK');
 
 -- --------------------------------------------------------
 
@@ -226,6 +315,13 @@ CREATE TABLE `user_course` (
   `course_id` int(11) NOT NULL,
   `id_pembayaran` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data untuk tabel `user_course`
+--
+
+INSERT INTO `user_course` (`id`, `account_id`, `course_id`, `id_pembayaran`) VALUES
+(1, '36241123', 1, 3);
 
 --
 -- Indexes for dumped tables
@@ -332,49 +428,49 @@ ALTER TABLE `user_course`
 -- AUTO_INCREMENT untuk tabel `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `lampiran`
 --
 ALTER TABLE `lampiran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT untuk tabel `materi`
 --
 ALTER TABLE `materi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `mentor_course`
 --
 ALTER TABLE `mentor_course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT untuk tabel `metode_pembayaran`
 --
 ALTER TABLE `metode_pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `partner`
 --
 ALTER TABLE `partner`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `pembayaran`
 --
 ALTER TABLE `pembayaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT untuk tabel `pertemuan`
 --
 ALTER TABLE `pertemuan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `role`
@@ -386,19 +482,19 @@ ALTER TABLE `role`
 -- AUTO_INCREMENT untuk tabel `sponsor`
 --
 ALTER TABLE `sponsor`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT untuk tabel `tipe_lampiran`
 --
 ALTER TABLE `tipe_lampiran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `user_course`
 --
 ALTER TABLE `user_course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
@@ -429,7 +525,7 @@ ALTER TABLE `materi`
 --
 ALTER TABLE `mentor_course`
   ADD CONSTRAINT `mentor_course_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
-  ADD CONSTRAINT `mentor_course_2` FOREIGN KEY (`mentor_id`) REFERENCES `mentor_course` (`id`);
+  ADD CONSTRAINT `mentor_course_2` FOREIGN KEY (`mentor_id`) REFERENCES `account` (`nik`);
 
 --
 -- Ketidakleluasaan untuk tabel `pembayaran`
