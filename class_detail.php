@@ -51,7 +51,7 @@ include "head-lp.php";
                 <h1>Selamat datang, Pak Kasim</h1>
             </div>
             <div class="col-6 text-end">
-                <a class=" btn btn-outline-dark btn-light" href="./login.php"><i class="fa-solid fa-user-plus"></i>
+                <a class=" btn btn-outline-dark btn-light" href="./user_page.php"><i class="fa-solid fa-user-plus"></i>
                     Keluar</a>
             </div>
         </div>
@@ -60,34 +60,6 @@ include "head-lp.php";
                 <img src="https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80"
                     class="rounded-circle border border-dark" alt="..." width="100px" height="100px">
             </div>
-            <div class="col-6">
-                <div class="row">
-                    <div class="col">
-                        <h3>Kasim Sempurna</h3>
-                        <p class=""><i class="fa-solid fa-user-tie"></i>Pendaftar</p>
-                        <p style="display: inline-block;" class="mx-2">No telp:
-                            0282734747</p>
-                        <p style="display: inline-block;" class="mx-2">Kantor:
-                            Belum Kerja</p>
-                        <p style="display: inline-block;" class="mx-2">Alamat:
-                            Jl. APT Zboncak isle No. 7 RT 10</p>
-                    </div>
-
-                </div>
-            </div>
-
-            <div class="col-4 text-end">
-                <p class=" btn btn-outline-dark btn-primary rounded-4">non-beasiswa</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container text-start" style="background-color: white; margin-bottom: 20px;">
-        <div class="row">
-            <h1>Aktifitas</h1>
-            <hr>
-        </div>
-        <div class="row">
             <div class="col-6">
                 <div class="row">
                     <div class="col">
@@ -101,39 +73,33 @@ include "head-lp.php";
                         <p style="display: inline-block;" class="mx-2">Alamat:
                             Jl. APT Zboncak isle No. 7 RT 10</p>
                     </div>
+
                 </div>
             </div>
-
-            <div class="col-6 text-end">
-                <a class=" btn btn-outline-dark btn-primary rounded-4" href="class_detail.php">Details</a>
-            </div>
         </div>
     </div>
-    </div>
 
-    </div>
-
-
-    <!-- <div class="container" style="margin-top: 9rem; height: 100vh; background-color: black;">
+    <div class="container text-start" style="background-color: white; margin-bottom: 20px;">
         <div class="row">
-            <div class="col-6">
-                <h1>Selamat datang, Pak Kasim</h1>
-            </div>
-            <div class="col-6" style="float: right;margin-right: 10px">
-                <a class=" btn btn-outline-dark btn-light" href="./login.php"><i class="fa-solid fa-user-plus"></i>
-                    Keluar</a>
+            <h3>Materi</h3>
+            <hr>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="row">
+
+                    <h1>Pertemuan 1 - Dasar public speaking</h1>
+                    <p class="">Lampiran file</p>
+                    <p class="">Lampiran file</p>
+                    <p class="">Lampiran file</p>
+
+                </div>
             </div>
         </div>
-        <div class="row" style="">
-            <div class="col-6">
-                <h1>Selamat datang, Pak Kasim</h1>
-            </div>
-            <div class="col-6">
-                <a class=" btn btn-outline-dark btn-light" href="./login.php"><i class="fa-solid fa-user-plus"></i>
-                    Keluar</a>
-            </div>
-        </di v>
-    </div> -->
+    </div>
+    </div>
+
+    </div>
 
 </body>
 
