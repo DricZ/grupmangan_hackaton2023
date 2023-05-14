@@ -36,7 +36,15 @@ body{
     margin-top: 0.8cm;
 }
 
+a{
+    text-decoration: none;
+}
+
 .content:hover{
     background-color: white;
     display: grid;
+    border-style: solid ;
+    border-color: #E75959;
+    color: #E75959;
+
 }
