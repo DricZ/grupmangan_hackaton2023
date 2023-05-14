@@ -32,7 +32,7 @@ session_start();
             <div class="col-10 text-start p-5" style="background-color: #FFF4F4;">
                 <div class="row">
                     <div class="col-md-6">
-                        <h2>Edit Siswa</h2>
+                        <h2>Edit Kelas</h2>
                     </div>
                     <div class="col-md-6 text-end align-self-center">
                         <a class=" btn btn-outline-dark btn-light" href="./login.php"><i class="fa-solid fa-user-plus"></i> Kembali</a>
@@ -40,9 +40,9 @@ session_start();
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-4 mt-3">
+                    <!-- <div class="col-4 mt-3">
                         <img src="https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="" width="50" height="50" class="rounded-circle">
-                    </div>
+                    </div> -->
 
                 </div>
                 <div class="row">
@@ -50,21 +50,21 @@ session_start();
                     <form class="row g-3 needs-validation" novalidate>
 
                         <div class="col-md-12">
-                            <!-- <label for="validationCustom01" class="form-label">First name</label> -->
+                            <label for="validationCustom01" class="form-label">Nama Kelas</label>
                             <input type="text" class="form-control" id="validationCustom01" value="" required>
                             <!-- <div class="valid-feedback">
                                 Looks good!
                             </div> -->
                         </div>
                         <div class="col-md-12">
-                            <label for="validationCustom02" class="form-label">Nomor Telepon</label>
+                            <label for="validationCustom02" class="form-label">Harga/Periode</label>
                             <input type="number" class="form-control" id="validationCustom02" value="" required>
                             <!-- <div class="valid-feedback">
                                 Looks good!
                             </div> -->
                         </div>
                         <div class="col-md-12">
-                            <label for="validationCustom01" class="form-label">Alamat</label>
+                            <label for="validationCustom01" class="form-label">Nama Mentor</label>
                             <input type="text" class="form-control" id="validationCustom01" value="" required>
                             <!-- <div class="valid-feedback">
                                 Looks good!
@@ -73,13 +73,27 @@ session_start();
                         <div class="col-md-6">
                             <label for="validationCustom02" class="form-label">Status</label>
                             <input type="text" class="form-control" id="validationCustom02" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">Kelas</label>
+                            <input type="text" class="form-control" id="validationCustom01" value="" required>
                             <!-- <div class="valid-feedback">
                                 Looks good!
                             </div> -->
                         </div>
                         <div class="col-md-6">
-                            <label for="validationCustom01" class="form-label">Gender</label>
-                            <input type="text" class="form-control" id="validationCustom01" value="" required>
+                            <label for="validationCustom02" class="form-label">Tanggal Mulai</label>
+                            <input type="date" class="form-control" id="validationCustom02" value="" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="validationCustom01" class="form-label">Tanggal Berakhir</label>
+                            <input type="date" class="form-control" id="validationCustom01" value="" required>
                             <!-- <div class="valid-feedback">
                                 Looks good!
                             </div> -->
@@ -89,11 +103,18 @@ session_start();
                     </form>
                 </div>
                 <div class="row">
+                    <p>data table list siswa</p>
+                </div>
+                <div class="row">
+                    <p>data table list materi</p>
+                </div>
+                <!-- <div class="row">
                     <div class="col-4 mt-3">
+                        <h4>lampiran 1</h4>
                         <img src="https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80https://plus.unsplash.com/premium_photo-1683288125490-871195ac4b99?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=435&q=80" alt="" width="150" height="150" class="rounded-4">
                     </div>
 
-                </div>
+                </div> -->
 
             </div>
 

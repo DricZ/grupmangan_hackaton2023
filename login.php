@@ -13,7 +13,7 @@ session_start();
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>X - Login</title>
+    <title>Majar Website - Login</title>
     <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/logos/android-icon-192x192.png">
     <link rel="icon" type="image/png" href="./assets/img/logos/android-icon-192x192.png">
 
@@ -61,9 +61,12 @@ session_start();
 
         <div class="main">
             <div class="atas" style="display: flex; gap:10px">
+            <a href="index.php" style="color: white; text-decoration: none;">
                 <span class="back">
                     <p style="display: flex; gap: 8px"><i class="fa-solid fa-arrow-right-from-bracket"></i>Kembali</p>
                 </span>
+            </a>
+                
             </div>
             <h3 style="margin-left:28%;margin-top:5%">HI, selamat datang di MAJAR!</h3>
             <div class="login">
@@ -77,9 +80,6 @@ session_start();
                                 <i class="fas fa-eye d-none" id="show_eye"></i>
                                 <i class="fas fa-eye-slash" id="hide_eye"></i>
                             </span>
-                        </div>
-                        <div class="input-group-append" style="justify-content: center;">
-                            <a id="fpass" href="./fpassword.php">Lupa Password?</a>
                         </div>
                     <div class="g-recaptcha" data-sitekey="6LeS0wclAAAAAIOtQCQg-NHBznLQGPZ7U6wbC0oN"></div>
             </div>

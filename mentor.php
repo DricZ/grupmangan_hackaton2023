@@ -51,7 +51,7 @@ $_SESSION['page'] = "Mentor";
                             
                             foreach($result as $row){
                         ?>
-                        <tr>
+                        <tr class="hoverablerow">
                             <td><?php echo $row['full_name'] ?></td>
                             <td><?php echo $row['name'] ?></td>
                             <td><?php echo $row['tanggal_pendaftaran'] ?></td>

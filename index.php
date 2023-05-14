@@ -22,13 +22,13 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item mx-2 underliners">
-            <a class="nav-link active text-white pb-0" aria-current="page" href="#">Tentang Kami</a>
+            <a class="nav-link active text-white pb-0" aria-current="page" href="#tentangkami">Tentang Kami</a>
           </li>
           <li class="nav-item mx-2 underliners">
-            <a class="nav-link active text-white pb-0" aria-current="page" href="#">Pelatihan</a>
+            <a class="nav-link active text-white pb-0" aria-current="page" href="#yangkami">Pelatihan</a>
           </li>
           <li class="nav-item mx-2 underliners">
-            <a class="nav-link text-white pb-0" href="#">Kontak</a>
+            <a class="nav-link text-white pb-0" href="#contactus">Kontak</a>
           </li>
           <li class="nav-item mx-2">
             <!-- <a class="nav-link" href="#"><button class="btn btn-outline-light">Masuk</button></a> -->
@@ -51,7 +51,7 @@
           <h1>usiamu tak menjadi halangan untuk mengikuti pelatihan dan meraih kemajuan kariermu!</h1>
           <hr>
           <h3 class="d-inline-block ">Ayo Daftar Sekarang</h3>
-          <button type="button" class="btn btn-outline-dark btn-light ms-2 mb-2">Daftar</button>
+          <a href="login.php" type="button" class="btn btn-outline-dark btn-light ms-2 mb-2">Daftar</a>
         </div>
         <div class="col-sm-12 col-lg-5 mt-3" data-aos="fade-left" data-aos-duration="1000">
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -112,7 +112,7 @@
     </div>
   </div>
 
-  <div style="background-color: #FFF4F4;">
+  <div style="background-color: #FFF4F4;" id="tentangkami">
     <div class="container text-center mb-5" style="border-radius: 270px 220px 80px 90px;
   background-color: white" data-aos="zoom-in-up" data-aos-duration="1000">
       <div class="row p-5">
@@ -142,19 +142,19 @@
   </div>
 
 
-  <div class="container text-center mt-5">
+  <div class="container text-center mt-5" id="yangkami">
     <div class="row text-start">
       <h1 class="mb-5"><span class="" style="border-bottom: 3px solid #E75959; color: black;">Keuntungan </span> Yang Kami Berikan</h1>
     </div>
     <div class="row">
-      <div class="col-12 col-lg-4">
-        <div class="card mb-3" style="max-width: 540px; background-color: #F7F7F7;">
+      <div class="col-12 col-lg-4" data-aos="fade-left" data-aos-duration="500">
+        <div class="card mb-3" style="max-width: 540px; background-color: #F7F7F7; border-radius: 10px;">
           <div class="row g-0" style="min-height: 125px;">
             <div class="col-md-3">
               <i class="fa-solid fa-book fa-3x " style="margin-top: 30%; color: 2A3174;"></i>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
+            <div class="col-md-9">
+              <div class="card-body" style="height: 100%;">
                 <p class="card-text fw-bold">Mendapat ilmu baru yang akan membuatmu siap menghadapi dunia kerja yang menantimu!
                 </p>
               </div>
@@ -162,14 +162,14 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4">
-        <div class="card mb-3" style="max-width: 540px; background-color: #F7F7F7;">
+      <div class="col-12 col-lg-4" data-aos="fade-left" data-aos-duration="1500">
+        <div class="card mb-3" style="max-width: 540px; background-color: #F7F7F7; border-radius: 10px;">
           <div class="row g-0" style="min-height: 125px;">
             <div class="col-md-3">
               <i class="fa-solid fa-users fa-3x  " style="margin-top: 30%; color: 2A3174;"></i>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
+            <div class="col-md-9">
+              <div class="card-body" style="height: 100%;">
                 <p class="card-text fw-bold">Nikmati keuntungan memiliki pendampingan penuh saat bekerja untuk meraih kesuksesan!
                 </p>
               </div>
@@ -177,14 +177,14 @@
           </div>
         </div>
       </div>
-      <div class="col-12 col-lg-4">
-        <div class="card mb-3" style="max-width: 540px; background-color: #F7F7F7;">
+      <div class="col-12 col-lg-4" data-aos="fade-left" data-aos-duration="3000">
+        <div class="card mb-3" style="max-width: 540px; background-color: #F7F7F7; border-radius: 10px;">
           <div class="row g-0" style="min-height: 125px;">
             <div class="col-md-3">
               <i class="fa-solid fa-building-user fa-3x" style="margin-top: 30%; color: 2A3174;"></i>
             </div>
-            <div class="col-md-8">
-              <div class="card-body">
+            <div class="col-md-9">
+              <div class="card-body" style="height: 100%;">
                 <p class="card-text fw-bold">Dapat bekerja langsung dengan perusahaan mitra kami dan raih kesempatan karier yang tak terbatas!
                 </p>
               </div>
@@ -193,12 +193,12 @@
         </div>
       </div>
     </div>
-    <div class="row mt-5">
+    <div class="row mt-5" data-aos="zoom-in" data-aos-duration="1000">
       <div class="col mx-auto">
         <div class="card text-center rounded-4 shadow ">
           <div class="card-body p-4 ">
             <h2>Daftar sekarang dan <br> bergabunglah dengan kami!</h2>
-            <a href="#" class="btn btn-outline-dark mt-3 rounded-4" style="min-width: 25%;">Daftar</a>
+            <a href="login.php" class="btn btn-outline-dark mt-3 rounded-4" style="min-width: 25%;">Daftar</a>
           </div>
         </div>
       </div>
@@ -206,7 +206,7 @@
     </div>
   </div>
 
-  <div class="container text-start mt-5">
+  <div class="container text-start mt-5" id="contactus">
     <div class="row">
       <div class="col-lg-6 col-sm-12">
         <div class="row">
@@ -300,7 +300,7 @@
     </div>
     <div class="row">
       <div class="col">
-        <p class="text-white text-center">@copyright2023</p>
+        <p class="text-white text-center">@grupmangan2023</p>
       </div>
     </div>
   </div>

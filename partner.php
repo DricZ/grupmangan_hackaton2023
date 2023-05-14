@@ -5,8 +5,6 @@ include('phps/check_integrity.php');
 $_SESSION['page'] = "Partner";
 ?>
 
-
-
 <!doctype html>
 <html lang="en">
 
@@ -26,7 +24,7 @@ $_SESSION['page'] = "Partner";
         <div class="row" style="min-height: 100vh;">
             <?php include './sidebar.php'; ?>
             <div class="col-10 text-start p-5" style="background-color: #FFF4F4;">
-                <h2>Mentor</h2>
+                <h2>Partner</h2>
                 <p class="mb-4">Hi, <?php echo $_SESSION["full_name"]; ?></p>
                 <hr>
                 <table id="example" class="table table-striped" style="width:100%">
@@ -34,28 +32,23 @@ $_SESSION['page'] = "Partner";
                         <th data-sortable="true">Nama Perusahaan</th>
                         <th data-sortable="true">Contact Person</th>
                         <th data-sortable="true">No Telepon</th>
-                        <th data-sortable="true">Course Yang Diambil</th>
+                        <th data-sortable="true">Alamat</th>
                     </thead>
                     <tbody>
                         <?php
-                            $sql = "SELECT a.full_name, r.name, a.tanggal_pendaftaran, a.no_wa, CONCAT(c.name, ' ', c.kelas) AS nama_kelas
-                            FROM `account` a
-                            LEFT JOIN role r ON r.id = a.id_role
-                            LEFT JOIN mentor_course uc ON uc.mentor_id = a.nik
-                            LEFT JOIN course c ON c.id = uc.course_id
-                            WHERE r.id = 2";
+                            $sql = "SELECT p.nama_perusahaan, p.nama_kontak, p.alamat, p.no_telp
+                            FROM partner p";
 
                             $result = $conn->prepare($sql);
                             $result->execute();
                             
                             foreach($result as $row){
                         ?>
-                        <tr>
-                            <td><?php echo $row['full_name'] ?></td>
-                            <td><?php echo $row['name'] ?></td>
-                            <td><?php echo $row['tanggal_pendaftaran'] ?></td>
-                            <td><?php echo $row['no_wa'] ?></td>
-                            <td><?php echo $row['nama_kelas'] ?></td>
+                        <tr class="hoverablerow">
+                            <td><?php echo $row['nama_perusahaan'] ?></td>
+                            <td><?php echo $row['alamat'] ?></td>
+                            <td><?php echo $row['nama_kontak'] ?></td>
+                            <td><?php echo $row['no_telp'] ?></td>
                         </tr>
                         <?php
                             }
