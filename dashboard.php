@@ -3,6 +3,34 @@ require "phps/connect.php";
 require "phps/check_integrity.php";
 
 $_SESSION['page'] = "Dashboard";
+
+$totalSiswa = "SELECT COUNT(nik) FROM ACCOUNT WHERE ID_ROLE = 2";
+$totalSiswa = $conn->prepare($totalSiswa);
+$totalSiswa->execute();
+
+$totalSiswa = $totalSiswa->fetchColumn();
+// echo "Total Siswa: " . $totalSiswa;
+
+$totalMentor = "SELECT COUNT(nik) FROM ACCOUNT WHERE ID_ROLE = 3";
+$totalMentor = $conn->prepare($totalMentor);
+$totalMentor->execute();
+
+$totalMentor = $totalMentor->fetchColumn();
+// echo "Total Mentor: " . $totalMentor;
+
+$totalKelas = "SELECT COUNT(id) FROM COURSE";
+$totalKelas = $conn->prepare($totalKelas);
+$totalKelas->execute();
+
+$totalKelas = $totalKelas->fetchColumn();
+// echo "Total Kelas: " . $totalKelas;
+
+$totalPendapatan = "SELECT sum(total) FROM pembayaran";
+$totalPendapatan = $conn->prepare($totalPendapatan);
+$totalPendapatan->execute();
+
+$totalPendapatan = $totalPendapatan->fetchColumn();
+// echo "Total Pendapatan: " . $totalPendapatan;
 ?>
 
 
@@ -51,7 +79,7 @@ $_SESSION['page'] = "Dashboard";
                                     </div>
                                     <div class="col-sm-7">
                                         <center>
-                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white">1000</p>
+                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white"> <?php echo $totalSiswa ?></p>
                                             <p class="m-0" style="font-size: 14px; color: white">Siswa</p>
                                         </center>
                                     </div>
@@ -72,7 +100,7 @@ $_SESSION['page'] = "Dashboard";
                                     </div>
                                     <div class="col-sm-7">
                                         <center>
-                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white">1000</p>
+                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white"> <?php echo $totalMentor ?></p>
                                             <p class="m-0" style="font-size: 14px; color: white">Mentor</p>
                                         </center>
                                     </div>
@@ -93,7 +121,7 @@ $_SESSION['page'] = "Dashboard";
                                     </div>
                                     <div class="col-sm-7">
                                         <center>
-                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white">1000</p>
+                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white"> <?php echo $totalKelas ?></p>
                                             <p class="m-0" style="font-size: 14px; color: white">Kelas</p>
                                         </center>
                                     </div>
@@ -114,7 +142,7 @@ $_SESSION['page'] = "Dashboard";
                                     </div>
                                     <div class="col-sm-7">
                                         <center>
-                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white">1000</p>
+                                            <p class="card-text m-0" style="font-weight:900; font-size: 28px; color: white"> <?php echo $totalPendapatan ?></p>
                                             <p class="m-0" style="font-size: 14px; color: white">Pendapatan</p>
                                         </center>
                                     </div>
