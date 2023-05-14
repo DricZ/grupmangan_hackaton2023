@@ -30,15 +30,21 @@
         <div class="main">
             <div style="text-align:center"><h2>Anda ingin login sebagai:</h2>
             </div>
+            <a href="login_admin.php">
             <div class="content">
                 <h3>Admin</h3>
             </div>
+            </a>
+            <a href="login.php">
             <div class="content">
                 <h3>Guru</h3>
             </div>
+            </a>
+            <a href="login.php">
             <div class="content">
                 <h3>Murid</h3>
             </div>
+            </a>
         </div>
     </body>
 </html>
