@@ -1,6 +1,6 @@
 <?php
 include('phps/connect.php');
-include('phps/check_integrity.php');
+// include('phps/check_integrity.php');
 
 $_SESSION['page'] = "Siswa";
 ?>

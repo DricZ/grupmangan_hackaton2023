@@ -30,14 +30,14 @@
             return $tanggal;
         }
         
-        if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 3600)) {
-            // jika lebih dari 1 jam sejak terakhir aktivitas, hapus session
+        // if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 3600)) {
+        //     // jika lebih dari 1 jam sejak terakhir aktivitas, hapus session
     
-            session_unset();
+        //     session_unset();
     
-            // Destroy the session
-            session_destroy();
-            header("Location: ./login.php?stats=3");
-        }
+        //     // Destroy the session
+        //     session_destroy();
+        //     header("Location: ./login.php?stats=3");
+        // }
     }
 ?>

@@ -9,7 +9,7 @@
     ];
     //check apakah user dengan username tersebut ada di table users  
     $query = "select * from account where username = ? limit 1";                                                    
-    $stmt = $mysqli->stmt_init();                                                                                                                                       
+    $stmt = $mysqli->stmt_init();                                                                                                                                 
     $stmt->prepare($query);
     $stmt->bind_param('s', $user['username']);
     $stmt->execute();
